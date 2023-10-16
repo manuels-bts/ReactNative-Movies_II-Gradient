@@ -14,6 +14,7 @@ export const NavigationStack = () => {
     return (
         <Stack.Navigator
             screenOptions={{
+                headerShown: false,
                 headerStyle: {
                     elevation: 0, // Android -> Quita la linea separadora del navigation bar
                     shadowColor: 'transparent', // iOS  -> Quita la linea separadora del navigation bar

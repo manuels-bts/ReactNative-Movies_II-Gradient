@@ -9,6 +9,7 @@ import { GradientBackground } from '../components/GradientBackground';
 import ImageColors from 'react-native-image-colors'
 import { getImageColors } from '../helpers/getColores';
 import { GradientContext } from '../context/GradiantContext';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width: windowWidth } = Dimensions.get('window');
 
@@ -17,6 +18,7 @@ export const MoviesScreen = () => {
     const navigation = useNavigation<any>();
     const { nowPlaying, popular, topRated, upcoming, isLoading } = useMovies()
     const { setMainColors } = useContext(GradientContext)
+    const { top } = useSafeAreaInsets()
 
 
     const getPosterColors = async (index: number) => {
@@ -32,6 +34,7 @@ export const MoviesScreen = () => {
         if (nowPlaying.length > 0) {
             // obtener imagen del primer poster
             getPosterColors(0)
+            console.log('obteniendo 1er gradiante')
         }
     }, [nowPlaying])
 
@@ -48,14 +51,17 @@ export const MoviesScreen = () => {
         <GradientBackground>
             <ScrollView>
                 {/* Carousel Principal */}
-                <View style={{ height: 320 }}  >
+                <View style={{ height: 320, top: top + 8 }}  >
                     <Carousel
                         layout={'default'}
                         data={nowPlaying}
                         renderItem={({ item }) => <MoviePoster movie={item} />}
                         sliderWidth={windowWidth}
                         itemWidth={200}
-                        onSnapToItem={index => getPosterColors(index)}
+                        onSnapToItem={index => {
+                            getPosterColors(index)
+                            console.log('cambio item')
+                        }}
                     />
                 </View>
 

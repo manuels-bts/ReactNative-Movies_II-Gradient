@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { View, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
 import { GradientContext } from '../context/GradiantContext';
 
@@ -13,10 +12,15 @@ export const GradientBackground = ({ children }: Props) => {
 
     const { colors } = useContext(GradientContext)
 
+    useEffect(() => {
+        console.log({ colors })
+    }, [colors])
+
+
     return (
-        <SafeAreaView style={{
+        <View style={{
             flex: 1,
-            backgroundColor: 'cyan'
+            // backgroundColor: 'yellow'
         }}
         >
             <LinearGradient
@@ -26,6 +30,6 @@ export const GradientBackground = ({ children }: Props) => {
                 end={{ x: 0.5, y: 0.7 }}
             />
             {children}
-        </SafeAreaView>
+        </View>
     )
 }
