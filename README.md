@@ -82,8 +82,10 @@ Please file a bug at https://feedbackassistant.apple.com with this warning messa
 ```
 
 ## Android
-![Screenshot_1697138392](https://github.com/manuels-bts/ReactNative-Movies/assets/116088500/373da92a-fa88-4bbc-b5f3-7044b2da5ddb)
+![Screenshot_1697494533](https://github.com/manuels-bts/ReactNative-Movies_II-Gradient/assets/116088500/e132f0c5-4604-4e3e-99a3-94c82099ba90)
+
 ![Screenshot_1697138400](https://github.com/manuels-bts/ReactNative-Movies/assets/116088500/3a847b23-e466-4d19-8138-dcd5439bf5a8)
+
 ![Screenshot_1697138404](https://github.com/manuels-bts/ReactNative-Movies/assets/116088500/f1d1651c-9d63-4080-a529-a0e28be8a036)
 
 Por alguna razon que desconozco hay un archivo que no se pudo encontrar, Este archivo es sobre colores de los cuales se renderea el Gradiante
