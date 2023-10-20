@@ -33,7 +33,7 @@ export const MoviesScreen = () => {
     useEffect(() => {
         if (nowPlaying.length > 0) {
             // obtener imagen del primer poster
-            getPosterColors(0)
+            // getPosterColors(0)
             console.log('obteniendo 1er gradiante')
         }
     }, [nowPlaying])
@@ -59,7 +59,7 @@ export const MoviesScreen = () => {
                         sliderWidth={windowWidth}
                         itemWidth={200}
                         onSnapToItem={index => {
-                            getPosterColors(index)
+                            // getPosterColors(index)
                             console.log('cambio item')
                         }}
                     />
