@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import currencyFormatter from "currency-formatter";
 import { FlatList } from 'react-native-gesture-handler';
 import { ActorItem } from './ActorItem';
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
     movieFull: MovieFull;
@@ -13,6 +14,9 @@ interface Props {
 }
 
 export const MovieInfo = ({ movieFull, cast }: Props) => {
+
+    const navigation = useNavigation<any>()
+
     return (
         <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
 
@@ -38,7 +42,7 @@ export const MovieInfo = ({ movieFull, cast }: Props) => {
             <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 15 }}>Casting</Text>
             <FlatList
                 data={cast}
-                renderItem={({ item }) => <ActorItem actor={item} />}
+                renderItem={({ item }) => <ActorItem actor={item} onPress={(actor) => navigation.navigate('CastScreen', actor)} />}
                 keyExtractor={(item) => item.id.toString()}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}

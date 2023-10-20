@@ -1,14 +1,19 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { Cast } from "../interfaces/movieCreditsInterfaces"
 
 interface Props {
     actor: Cast;
+    onPress: (actor: Cast) => void;
 }
 
-export const ActorItem = ({ actor }: Props) => {
+export const ActorItem = ({ actor, onPress }: Props) => {
     const imgUrl = actor.profile_path !== null ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png'
     return (
-        <View style={styles.container}>
+        <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.container}
+            onPress={() => onPress(actor)}
+        >
             <Image
                 style={styles.actorPicture}
                 source={{
@@ -20,7 +25,7 @@ export const ActorItem = ({ actor }: Props) => {
                 <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{actor.name}</Text>
                 <Text style={{ fontSize: 12, color: 'gray' }}>{actor.character}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
