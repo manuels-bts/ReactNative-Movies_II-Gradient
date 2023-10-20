@@ -88,6 +88,9 @@ Please file a bug at https://feedbackassistant.apple.com with this warning messa
 
 ![Screenshot_1697138404](https://github.com/manuels-bts/ReactNative-Movies/assets/116088500/f1d1651c-9d63-4080-a529-a0e28be8a036)
 
+![Screenshot_1697828147](https://github.com/manuels-bts/ReactNative-Movies_II-Gradient/assets/116088500/5387c30b-21fc-4f84-a527-398231828922)
+
+
 Por alguna razon que desconozco hay un archivo que no se pudo encontrar, Este archivo es sobre colores de los cuales se renderea el Gradiante
 ```
  ERROR  Error: Cannot find native module 'ImageColors', js engine: hermes
